@@ -7,6 +7,7 @@ if (file_exists($autoloadPath)) {
 }
 
 use function Cli\Parser\parseFile;
+use function Cli\Differ\genDiff;
 
 $doc = <<<DOCOPT
 Generate diff
@@ -31,5 +32,6 @@ $secondPath = $args['<secondFile>'];
 $data1 = parseFile($firstPath);
 $data2 = parseFile($secondPath);
 
-print_r($data1);
-print_r($data2);
+$difInfo = genDiff($data1, $data2);
+
+print_r($difInfo);

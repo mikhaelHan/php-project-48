@@ -13,7 +13,8 @@
             "Hexlet\\Code\\": "src/"
         },
         "files": [
-        "src/Parser.php"
+        "src/Parser.php",
+        "src/Differ.php"
     ]
     },
     "bin": [
