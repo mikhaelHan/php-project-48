@@ -6,6 +6,8 @@ if (file_exists($autoloadPath)) {
   require_once $autoloadPath;
 }
 
+use function Cli\Parser\parseFile;
+
 $doc = <<<DOCOPT
 Generate diff
 
@@ -22,3 +24,12 @@ Options:
 DOCOPT;
 
 $args = Docopt::handle($doc, ['version' => '1.0.0']);
+
+$firstPath = $args['<firstFile>'];
+$secondPath = $args['<secondFile>'];
+
+$data1 = parseFile($firstPath);
+$data2 = parseFile($secondPath);
+
+print_r($data1);
+print_r($data2);
