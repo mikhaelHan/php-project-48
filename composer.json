@@ -1,0 +1,22 @@
+{
+    "name": "hexlet/code",
+    "description": "Project Difference Calculator (PHP)",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mikhaelHan",
+            "email": "hancharuk270185@mail.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/gendiff"
+    ],
+    "require": {
+        "docopt/docopt": "^1.0"
+    }
+}
