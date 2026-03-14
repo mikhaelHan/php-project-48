@@ -10,4 +10,5 @@ lint-fix:
 
 # Запуск тестов
 test:
-	composer test
+	mkdir -p build/logs
+	composer exec --verbose phpunit tests -- --log-junit build/logs/junit.xml --coverage-clover build/logs/clover.xml
