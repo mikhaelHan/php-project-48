@@ -10,4 +10,4 @@ lint-fix:
 
 # Запуск тестов
 test:
-	composer tests
+	composer test
