@@ -1,0 +1,11 @@
+{
+    baseUrl: src
+  - module: ES2022
+  + module: ES2024
+  - moduleResolution: node
+  - sourceMap: true
+  + sourceMap: false
+  + strict: true
+  - target: ES2022
+  + target: ES2023
+}

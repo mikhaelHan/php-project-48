@@ -6,7 +6,7 @@ if (file_exists($autoloadPath)) {
   require_once $autoloadPath;
 }
 
-use function Cli\Parser\parseFile;
+use function Cli\Utils\parseFile;
 use function Cli\Differ\genDiff;
 
 $doc = <<<DOCOPT

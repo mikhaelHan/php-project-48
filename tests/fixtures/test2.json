@@ -1,0 +1,7 @@
+{
+  "baseUrl": "src",
+  "strict": true,
+  "target": "ES2023",
+  "module": "ES2024",
+  "sourceMap": false
+}

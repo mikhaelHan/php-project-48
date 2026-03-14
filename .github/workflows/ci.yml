@@ -1,0 +1,29 @@
+name: Hexlet CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонируем репозиторий
+      - uses: actions/checkout@v4
+
+      # Устанавливаем PHP
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+
+      # 2. Устанавливаем зависимости
+      - name: Install dependencies
+        run: make install
+
+      # 3. Запускаем линтер
+      - name: Run linter
+        run: make lint
+
+      # 4. Запускаем тесты
+      - name: Run tests
+        run: make test
