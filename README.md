@@ -8,4 +8,7 @@
 ## Demos
 
 ### Comparing Flat Files (JSON)
-[![asciicast]( https://asciinema.org/a/IrURN6i6xMG9hwv1.png)]( https://asciinema.org/a/IrURN6i6xMG9hwv1)
+[![asciicast](https://asciinema.org/a/IrURN6i6xMG9hwv1.png)](https://asciinema.org/a/IrURN6i6xMG9hwv1)
+
+### Comparing Flat Files (JSON or YAML or YML)
+[![asciicast](https://asciinema.org/a/ERB9poEQOwuOiaup.png)](https://asciinema.org/a/ERB9poEQOwuOiaup)

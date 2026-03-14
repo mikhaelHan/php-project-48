@@ -11,13 +11,37 @@ use function Cli\Utils\stringify;
 class UtilsTest extends TestCase
 {
   private string $fixturesPath = __DIR__ . '/fixtures';
+  private $parsedExpected = [
+    'baseUrl' => "src",
+    'strict' => true,
+    'target' => "ES2023",
+    'module' => "ES2024",
+    'sourceMap' => false
+  ];
 
-  public function testParsedFile(): void
+  public function testParsedJsonFile(): void
   {
-    $path = "{$this->fixturesPath}/test1.json";
-    $expected = json_decode(file_get_contents($path), true);
+    $path = "{$this->fixturesPath}/test2.json";
 
-    $this->assertEquals($expected, parseFile($path));
+    $this->assertEquals($this->parsedExpected, parseFile($path));
+  }
+
+  public function testParsedYmlFile(): void
+  {
+    $path = "{$this->fixturesPath}/test2.yml";
+
+    $this->assertEquals($this->parsedExpected, parseFile($path));
+  }
+
+  public function testUnsupportedFile(): void
+  {
+    $path = "{$this->fixturesPath}/unsupported.txt";
+    $extension = pathinfo($path, PATHINFO_EXTENSION);
+
+    $this->expectException(\Exception::class);
+    $this->expectExceptionMessage("Unsupported file format: {$extension}");
+
+    parseFile($path);
   }
 
   public function testFileNotFound(): void

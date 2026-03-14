@@ -2,13 +2,21 @@
 
 namespace Cli\Utils;
 
+use Symfony\Component\Yaml\Yaml;
+
 function parseFile(string $path): array
 {
     if (!file_exists($path)) {
         throw new \Exception("File not found: {$path}");
     }
 
-    return json_decode(file_get_contents($path), true);
+    $extension = pathinfo($path, PATHINFO_EXTENSION);
+
+    return match ($extension) {
+        'json' => json_decode(file_get_contents($path), true),
+        'yaml', 'yml' => Yaml::parseFile($path),
+        default => throw new \Exception("Unsupported file format: {$extension}"),
+    };
 }
 
 function stringify(mixed $value): string
