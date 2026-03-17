@@ -1,7 +1,18 @@
 {
-  "baseUrl": "src",
-  "target": "ES2022",
-  "module": "ES2022",
-  "sourceMap": true,
-  "moduleResolution": "node"
+  "group1": {
+    "id": 1,
+    "foo": "bar-bar",
+    "nest": {
+      "key": "value-1"
+    }
+  },
+  "group2": {
+    "abc": 12345678,
+    "deep": {
+      "id": 45,
+      "deep": {
+        "id": 48
+      }
+    }
+  }
 }

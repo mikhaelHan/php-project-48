@@ -6,7 +6,7 @@ if (file_exists($autoloadPath)) {
   require_once $autoloadPath;
 }
 
-use function Cli\Utils\parseFile;
+use function Cli\Parsers\parseFile;
 use function Cli\Differ\genDiff;
 
 $doc = <<<DOCOPT
@@ -28,10 +28,11 @@ $args = Docopt::handle($doc, ['version' => '1.0.0']);
 
 $firstPath = $args['<firstFile>'];
 $secondPath = $args['<secondFile>'];
+$format = $args['--format'];
 
 $data1 = parseFile($firstPath);
 $data2 = parseFile($secondPath);
 
-$difInfo = genDiff($data1, $data2);
+$difInfo = genDiff($data1, $data2, $format);
 
-print_r($difInfo);
+echo $difInfo;

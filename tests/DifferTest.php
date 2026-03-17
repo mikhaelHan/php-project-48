@@ -3,18 +3,33 @@
 namespace Cli\Tests;
 
 use PHPUnit\Framework\TestCase;
-use function Cli\Utils\parseFile;
+use function Cli\Parsers\parseFile;
 use function Cli\Differ\genDiff;
 
 class DifferTest extends TestCase
 {
-  public function testCalculateDifference(): void
+  private string $expected;
+
+  protected function setUp(): void
+  {
+    $this->expected = file_get_contents(__DIR__ . '/fixtures/expected_diff.txt');
+  }
+
+  public function testCalculateDifferenceJson(): void
   {
     $data1 = parseFile(__DIR__ . '/fixtures/test1.json');
     $data2 = parseFile(__DIR__ . '/fixtures/test2.json');
 
-    $expected = file_get_contents(__DIR__ . '/fixtures/expected_diff.txt');
+    $this->assertEquals(trim($this->expected), trim(genDiff($data1, $data2, 'stylish')));
+    $this->assertEquals(trim($this->expected), trim(genDiff($data1, $data2)));
+  }
 
-    $this->assertEquals(trim($expected), trim(genDiff($data1, $data2)));
+  public function testCalculateDifferenceYml(): void
+  {
+    $data1 = parseFile(__DIR__ . '/fixtures/test1.yml');
+    $data2 = parseFile(__DIR__ . '/fixtures/test2.yml');
+
+    $this->assertEquals(trim($this->expected), trim(genDiff($data1, $data2, 'stylish')));
+    $this->assertEquals(trim($this->expected), trim(genDiff($data1, $data2)));
   }
 }

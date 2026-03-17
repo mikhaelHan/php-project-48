@@ -19,8 +19,10 @@
             "Hexlet\\Code\\": "src/"
         },
         "files": [
-        "src/Utils.php",
-        "src/Differ.php"
+        "src/Differ.php",
+        "src/Formatters.php",
+        "src/Parsers.php",
+        "src/Stylish.php"
     ]
     },
     "bin": [

@@ -1,5 +1,12 @@
-baseUrl: src
-strict: true
-target: ES2023
-module: ES2024
-sourceMap: false
+group1:
+  id: 1
+  foo: bar
+  nest:
+    key: value
+group2:
+  abc: 12345
+  foo: bar
+  deep:
+    id: 48
+group3:
+  id: 100
