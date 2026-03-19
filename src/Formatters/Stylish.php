@@ -1,6 +1,7 @@
 <?php
 
-namespace Cli\Stylish;
+namespace Cli\Formatters\Stylish;
+
 
 function stringify(mixed $data, int $deep): string
 {
@@ -23,7 +24,6 @@ function stringify(mixed $data, int $deep): string
         return "{\n$result\n$bracketIndent}";
     }
 }
-
 
 function formatStylish(array $diffTree, $deep = 1): string
 {

@@ -33,6 +33,8 @@ $format = $args['--format'];
 $data1 = parseFile($firstPath);
 $data2 = parseFile($secondPath);
 
+print_r($data1);
+
 $difInfo = genDiff($data1, $data2, $format);
 
 echo $difInfo;

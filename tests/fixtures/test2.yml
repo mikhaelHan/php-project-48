@@ -1,12 +1,21 @@
-group1:
-  id: 1
-  foo: bar
-  nest:
+common:
+  follow: false
+  setting1: Value 1
+  setting3: null
+  setting4: blah blah
+  setting5:
+    key5: value5
+  setting6:
     key: value
-group2:
-  abc: 12345
+    ops: vops
+    doge:
+      wow: so much
+group1:
   foo: bar
-  deep:
-    id: 48
+  baz: bars
+  nest: str
 group3:
-  id: 100
+  deep:
+    id:
+      number: 45
+  fee: 100500

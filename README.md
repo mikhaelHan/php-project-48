@@ -15,3 +15,6 @@
 
 ### Recursive comparison Files (JSON or YAML or YML)
 [![asciicast](https://asciinema.org/a/OeUmCLfNCNOtYaL7.png)](https://asciinema.org/a/OeUmCLfNCNOtYaL7)
+
+### Flat format "Plain" (JSON or YAML or YML)
+[![asciicast](https://asciinema.org/a/OzXNwJNEYJBzoBuE.png)](https://asciinema.org/a/OzXNwJNEYJBzoBuE)
