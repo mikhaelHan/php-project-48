@@ -2,7 +2,6 @@
 
 namespace Cli\Formatters\Plain;
 
-
 function stringify(mixed $data): string
 {
     return match (true) {

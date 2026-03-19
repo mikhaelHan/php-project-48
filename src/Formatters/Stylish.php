@@ -2,7 +2,6 @@
 
 namespace Cli\Formatters\Stylish;
 
-
 function stringify(mixed $data, int $deep): string
 {
     if (!is_array($data)) {
