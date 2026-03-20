@@ -1,6 +1,6 @@
 <?php
 
-namespace Cli\Formatters\Json;
+namespace Differ\Formatters\Json;
 
 function formatJson(array $diffTree): string
 {

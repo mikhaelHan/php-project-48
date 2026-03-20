@@ -1,6 +1,6 @@
 <?php
 
-namespace Cli\Formatters\Stylish;
+namespace Differ\Formatters\Stylish;
 
 function stringify(mixed $data, int $deep): string
 {

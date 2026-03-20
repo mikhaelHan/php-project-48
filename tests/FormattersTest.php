@@ -1,12 +1,12 @@
 <?php
 
-namespace Cli\Tests;
+namespace Differ\Tests;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-use function Cli\Formatters\Stylish\stringify as stringifyForStylish;
-use function Cli\Formatters\Plain\stringify as stringifyForPlain;
-use function Cli\Formatters\format;
+use function Differ\Formatters\Stylish\stringify as stringifyForStylish;
+use function Differ\Formatters\Plain\stringify as stringifyForPlain;
+use function Differ\Formatters\format;
 
 class FormattersTest extends TestCase
 {

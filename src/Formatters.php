@@ -1,10 +1,10 @@
 <?php
 
-namespace Cli\Formatters;
+namespace Differ\Formatters;
 
-use function Cli\Formatters\Stylish\formatStylish;
-use function Cli\Formatters\Plain\formatPlain;
-use function Cli\Formatters\Json\formatJson;
+use function Differ\Formatters\Stylish\formatStylish;
+use function Differ\Formatters\Plain\formatPlain;
+use function Differ\Formatters\Json\formatJson;
 
 function format(array $diffTree, string $formatName): string
 {

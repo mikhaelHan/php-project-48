@@ -1,9 +1,9 @@
 <?php
 
-namespace Cli\Tests;
+namespace Differ\Tests;
 
 use PHPUnit\Framework\TestCase;
-use function Cli\Parsers\parseFile;
+use function Differ\Parsers\parseFile;
 
 
 class ParsersTest extends TestCase

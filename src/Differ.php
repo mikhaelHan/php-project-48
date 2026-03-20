@@ -1,8 +1,8 @@
 <?php
 
-namespace Cli\Differ;
+namespace Differ\Differ;
 
-use function Cli\Formatters\format;
+use function Differ\Formatters\format;
 
 function buildDiffTree(array $data1, array $data2): array
 {

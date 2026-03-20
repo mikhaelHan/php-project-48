@@ -1,10 +1,10 @@
 <?php
 
-namespace Cli\Tests;
+namespace Differ\Tests;
 
 use PHPUnit\Framework\TestCase;
-use function Cli\Parsers\parseFile;
-use function Cli\Differ\genDiff;
+use function Differ\Parsers\parseFile;
+use function Differ\Differ\genDiff;
 
 class DifferTest extends TestCase
 {
