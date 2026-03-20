@@ -38,8 +38,8 @@ function formatStylish(array $diffTree, $deep = 1): string
             'deleted'   => $minusIndent . $key . ': ' . stringify($node['value'], $deep + 1),
             'unchanged' => $indent . $key . ': ' . stringify($node['value'], $deep + 1),
             'changed'   => $minusIndent . $key . ': ' . stringify($node['oldValue'], $deep + 1) . "\n"
-            . $plusIndent . $key . ': ' . stringify($node['newValue'], $deep + 1),
-            'nested'  => $indent . $key . ': ' . formatStylish($node['children'], $deep + 1),
+                . $plusIndent . $key . ': ' . stringify($node['newValue'], $deep + 1),
+            'nested'    => $indent . $key . ': ' . formatStylish($node['children'], $deep + 1),
             default     => throw new \Exception("Unknown node type: {$node['type']}")
         };
     }, $diffTree);

@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use function Cli\Formatters\Stylish\stringify as stringifyForStylish;
 use function Cli\Formatters\Plain\stringify as stringifyForPlain;
-
+use function Cli\Formatters\format;
 
 class FormattersTest extends TestCase
 {
@@ -48,5 +48,17 @@ class FormattersTest extends TestCase
       ['0', 0],
       ['[complex value]', ["group" => ["id" => 1]]]
     ];
+  }
+
+  public function testFormatJsonError(): void
+  {
+    $invalidData = [
+      'file' => fopen(__FILE__, 'r')
+    ];
+
+    $this->expectException(\Exception::class);
+    $this->expectExceptionMessage("Failed to stringify diff tree to JSON");
+
+    format($invalidData, 'json');
   }
 }

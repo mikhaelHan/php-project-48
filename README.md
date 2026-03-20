@@ -18,3 +18,6 @@
 
 ### Flat format "Plain" (JSON or YAML or YML)
 [![asciicast](https://asciinema.org/a/OzXNwJNEYJBzoBuE.png)](https://asciinema.org/a/OzXNwJNEYJBzoBuE)
+
+### Format "Json" (JSON or YAML or YML)
+[![asciicast](https://asciinema.org/a/PFcNYdWRYWjWzYMv.png)](https://asciinema.org/a/PFcNYdWRYWjWzYMv)
