@@ -3,13 +3,13 @@
 namespace Differ\Tests;
 
 use PHPUnit\Framework\TestCase;
-use function Differ\Parsers\parseFile;
 
+use function Differ\Parsers\parseFile;
 
 class ParsersTest extends TestCase
 {
-  private string $fixturesPath = __DIR__ . '/fixtures';
-  private $parsedExpected = [
+    private string $fixturesPath = __DIR__ . '/fixtures';
+    private $parsedExpected = [
     "common" => [
       "setting1" => 'Value 1',
       "setting2" => 200,
@@ -38,38 +38,38 @@ class ParsersTest extends TestCase
         "id" => 45
       ]
     ]
-  ];
+    ];
 
-  public function testParsedJsonFile(): void
-  {
-    $path = "{$this->fixturesPath}/test1.json";
+    public function testParsedJsonFile(): void
+    {
+        $path = "{$this->fixturesPath}/test1.json";
 
-    $this->assertEquals($this->parsedExpected, parseFile($path));
-  }
+        $this->assertEquals($this->parsedExpected, parseFile($path));
+    }
 
-  public function testParsedYmlFile(): void
-  {
-    $path = "{$this->fixturesPath}/test1.yml";
+    public function testParsedYmlFile(): void
+    {
+        $path = "{$this->fixturesPath}/test1.yml";
 
-    $this->assertEquals($this->parsedExpected, parseFile($path));
-  }
+        $this->assertEquals($this->parsedExpected, parseFile($path));
+    }
 
-  public function testUnsupportedFile(): void
-  {
-    $path = "{$this->fixturesPath}/expected_diff_stylish.txt";
-    $extension = pathinfo($path, PATHINFO_EXTENSION);
+    public function testUnsupportedFile(): void
+    {
+        $path = "{$this->fixturesPath}/expected_diff_stylish.txt";
+        $extension = pathinfo($path, PATHINFO_EXTENSION);
 
-    $this->expectException(\Exception::class);
-    $this->expectExceptionMessage("Unsupported file format: {$extension}");
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage("Unsupported file format: {$extension}");
 
-    parseFile($path);
-  }
+        parseFile($path);
+    }
 
-  public function testFileNotFound(): void
-  {
-    $this->expectException(\Exception::class);
-    $this->expectExceptionMessage("File not found: non_existent.json");
+    public function testFileNotFound(): void
+    {
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage("File not found: non_existent.json");
 
-    parseFile('non_existent.json');
-  }
+        parseFile('non_existent.json');
+    }
 }
