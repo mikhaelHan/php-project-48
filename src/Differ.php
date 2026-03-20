@@ -2,6 +2,7 @@
 
 namespace Differ\Differ;
 
+use function Differ\Parsers\parseFile;
 use function Differ\Formatters\format;
 
 function buildDiffTree(array $data1, array $data2): array
@@ -40,8 +41,12 @@ function buildDiffTree(array $data1, array $data2): array
     }, $keys);
 }
 
-function genDiff(array $data1, array $data2, string $formatName = 'stylish'): string
+function genDiff(string $pathToFile1, string $pathToFile2, string $formatName = 'stylish'): string
 {
+    $data1 = parseFile($pathToFile1);
+    $data2 = parseFile($pathToFile2);
+
     $diffTree = buildDiffTree($data1, $data2);
+
     return format($diffTree, $formatName);
 }
