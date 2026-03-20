@@ -31,5 +31,5 @@ function formatPlain(array $diffTree, string $propertyName = ''): string
         };
     }, $diffTree);
 
-    return implode("\n", array_filter($lines));
+    return implode("\n", array_filter($lines, fn($value) => $value !== null));
 }

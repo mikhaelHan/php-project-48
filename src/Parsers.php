@@ -13,7 +13,14 @@ function parseFile(string $path): array
     $extension = pathinfo($path, PATHINFO_EXTENSION);
 
     return match ($extension) {
-        'json'        => json_decode(file_get_contents($path), true),
+        'json'        => (function ($path) {
+            $content = file_get_contents($path);
+
+            if ($content === false) {
+                throw new \Exception("Could not read file: {$path}");
+            }
+            return json_decode($content, true);
+        })($path),
         'yaml', 'yml' => Yaml::parseFile($path),
         default       => throw new \Exception("Unsupported file format: {$extension}"),
     };

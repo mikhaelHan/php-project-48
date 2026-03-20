@@ -24,7 +24,7 @@ function stringify(mixed $data, int $deep): string
     }
 }
 
-function formatStylish(array $diffTree, $deep = 1): string
+function formatStylish(array $diffTree, int $deep = 1): string
 {
     $treeLines = array_map(function ($node) use ($deep) {
         $key = $node['key'];
